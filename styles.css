@@ -279,7 +279,7 @@ a:hover::after {
     display: none;
 }
 
-/* Sidebar functionality for smaller screens */
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
 
     /* Display menu icon on smaller screens */
@@ -317,7 +317,6 @@ a:hover::after {
     /* Sidebar active state */
     .profile.active {
         left: 0; /* Bring the profile into view */
-        overflow: hidden;
     }
 
     /* Content adjustments for smaller screens */
