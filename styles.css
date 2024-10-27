@@ -1,0 +1,327 @@
+/* Body and Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #e8e4df; /* Light background */
+    color: #1F2631; /* Dark text color */
+
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+/* Scrollbar Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2B3542; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+    background: #e8e4df; /* Background of the scrollbar track */
+}
+
+.custom-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2B3542, #7991AB);
+    width: 90%; /* Width of the divider */
+    margin: 20px auto; /* Centered divider with spacing */
+    border-radius: 10px; /* Rounded edges */
+}
+
+
+/* Basic styles for anchor elements */
+a {
+    position: relative;
+    color: #4A606B; /* Text color */
+    text-decoration: none !important; /* Hide the original underline */
+    font-weight: 600;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -1px; /* Position the underline just below the text */
+    width: 0;
+    height: 1.5px; /* Thickness of the underline */
+    background-color: #4A606B; /* Same color as text */
+    transition: width 0.4s ease, left 0.4s ease; /* Smooth animation */
+}
+
+a:hover::after {
+    width: 100%; /* Full underline on hover */
+    left: 0; /* Start from the left to cover the entire text */
+}
+
+.no-style {
+    font-weight: normal;
+}
+
+.no-style::after {
+    content: none;
+    font-weight: normal;
+}
+
+/* Style for the CV button */
+.cv-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #2B3542; /* Button background */
+    color: #E2E0DD; /* Button text color */
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+/* Remove underline */
+.cv-btn:hover {
+    transform: scale(1.05); /* Scale up the button on hover */
+    background-color: #36454F; /* Darker shade on hover */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Left Profile Section */
+.profile {
+    background-color: #D0CDC9;
+    padding: 25px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: sticky;
+    top: 40px; /* Sticky starts when the top of the viewport is 20px away */
+    align-self: flex-start; /* Makes the sticky sidebar stay aligned at the top */
+    height: fit-content; /* Dynamically adjusts height to content */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth scroll */
+}
+
+.profile.is-sticky {
+    transform: translateY(5px);
+}
+
+.profile.is-sticky-bottom {
+    transform: translateY(0px); 
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    font-size: 1.8rem;
+    margin-bottom: -10px;
+}
+
+.profile p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.profile ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.profile ul li {
+    margin-bottom: 10px;
+}
+
+.profile a {
+    color: #4A606B;
+    text-decoration: none;
+}
+
+.profile a:hover {
+    text-decoration: underline;
+}
+
+.profile .cv-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #2B3542;
+    color: #E2E0DD;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.profile .cv-btn:hover {
+    background-color: #4A606B;
+}
+
+/* Right About Section */
+.content {
+    margin-top: -20px;
+    margin-left: 40px;
+    width: 700px;
+}
+
+.about,
+.skills {
+    background-color: #D0CDC9; /* Section background */
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about h2,
+.skills h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0px;
+    color: #1F2631; /* Header color */
+}
+
+.about p {
+    font-size: 0.97rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Experience Section */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+    grid-gap: 20px; /* Adds space between grid items */
+}
+
+.skills .skill-item {
+    background-color: #2B3542; /* Skill item background */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+    text-align: center;
+    transition: transform 0.4s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #E2E0DD; /* Header color */
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    color: #E2E0DD; /* Text color */
+}
+
+.skill-item:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    background-color: #4A606B;
+}
+
+
+/* Generic Styles for other Sections */
+.education,
+.certifications,
+.technical-skills,
+.interests {
+    background-color: #D0CDC9; /* Section background */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.education h2,
+.certifications h2,
+.technical-skills h2,
+.interests h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0px;
+    color: #1F2631; /* Header color */
+}
+
+/* Apply scaling effect to all containers */
+.profile, .about, .education, .skills, .certifications, .technical-skills, .interests {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth transition for scaling */
+}
+
+.profile:hover, .about:hover, .education:hover, .skills:hover, .certifications:hover, .technical-skills:hover, .interests:hover {
+    transform: scale(1.02); /* Slightly increase the size on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide menu icon by default */
+.menu-icon {
+    display: none;
+}
+
+/* Sidebar functionality for smaller screens */
+@media (max-width: 768px) {
+
+    /* Display menu icon on smaller screens */
+    .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed; /* Change to fixed for better visibility */
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+    }
+
+    /* Adjust profile to be hidden initially */
+    .profile {
+        position: fixed;
+        top: 0;
+        left: -150%; /* Start off-screen */
+        width: 100%;
+        height: 100vh; /* Full height */
+        background-color: #D0CDC9;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        padding: 30px;
+        margin-top: 0; /* Reset margin for full screen */
+    }
+
+    .profile:hover {
+        transform: none; /* Disable scale */
+        box-shadow: none; /* Disable box-shadow */
+    }
+
+    /* Sidebar active state */
+    .profile.active {
+        left: 0; /* Bring the profile into view */
+    }
+
+    /* Content adjustments for smaller screens */
+    .content {
+        margin-left: 1; /* Reset margin for full-width view */
+        width: 100%;
+    }
+}
