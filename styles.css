@@ -285,12 +285,12 @@ a:hover::after {
     /* Display menu icon on smaller screens */
     .menu-icon {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         cursor: pointer;
         padding: 10px;
         position: fixed; /* Change to fixed for better visibility */
-        top: 10px;
-        left: 10px;
+        top: 5px;
+        left: 5px;
         z-index: 1001;
     }
 
@@ -309,7 +309,7 @@ a:hover::after {
         margin-top: 0; /* Reset margin for full screen */
     }
 
-    .profile:hover {
+    .profile:hover, .about:hover, .education:hover, .skills:hover, .certifications:hover, .technical-skills:hover, .interests:hover {
         transform: none; /* Disable scale */
         box-shadow: none; /* Disable box-shadow */
     }
@@ -317,11 +317,37 @@ a:hover::after {
     /* Sidebar active state */
     .profile.active {
         left: 0; /* Bring the profile into view */
+        overflow: hidden;
     }
 
     /* Content adjustments for smaller screens */
     .content {
-        margin-left: 1; /* Reset margin for full-width view */
+        font-size: 0.9rem;
+        margin-left: 5px; /* Reset margin for full-width view */
         width: 100%;
+    }
+
+    .skills {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    .about h2, .skills h2, .education h2, .certifications h2, .technical-skills h2, .interests h2 {
+        font-size: 1.5rem; /* Adjust heading sizes */
+    }
+
+    .skills h2 {
+        margin-bottom: -40px;
+    }
+
+    .skills h3 {
+        font-size: 1.1rem;
+    }
+
+    .skills p {
+        font-size: 0.8rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
     }
 }
